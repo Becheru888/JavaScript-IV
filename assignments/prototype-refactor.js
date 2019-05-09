@@ -10,7 +10,7 @@ Prototype Refactor
 
 class GameObject {
     constructor(createdAt, name, dimensions) {
-        this.createdAt = createdAt,
+            this.createdAt = createdAt,
             this.name = name,
             this.dimensions = dimensions
     }
