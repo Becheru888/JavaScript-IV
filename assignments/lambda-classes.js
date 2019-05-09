@@ -39,10 +39,11 @@ class Student extends Person{
         this.favSubject = favSubject
     }
 
-    listSubjects(){
-        console.log(`${this.favSubject}`)
-    }
-
+    listsSubjects() {
+      return this.favSubject.forEach(subject => {
+          console.log(subject);
+        });
+      }
     PRAssignment(subject){
         console.log(`${this.name} has submited PR for ${subject}`)
     }
@@ -70,8 +71,8 @@ class ProjectManager extends Instructor{
 
 const instructor1 = new Instructor('Gabe', 'UK', '31','Male','Js Dveloper','JavaScript','The force be with you.')
 const instructor2 = new Instructor('Adrian', 'Poland', '26','Male','Js Dveloper','Java','Learn Learn Learn')
-const student1 = new Student('Remi', 'London', '26', 'Male', 'Sales Consultant', 'FullStackWeb', 'JavaScript')
-const student2 = new Student('Victor', 'America', '21', 'Male', 'Student', 'FullStackWeb', 'Less, Css')
+const student1 = new Student('Remi', 'London', '26', 'Male', 'Sales Consultant', 'FullStackWeb', ['Html','Css'])
+const student2 = new Student('Victor', 'America', '21', 'Male', 'Student', 'FullStackWeb', ['JavaScript','Java'])
 const projectManager1 = new ProjectManager('Borja','Spain', '26' ,'Male','JavaDeveloper','Javascript','Just Relax','WEBEU2','Gabe')
 const projectManager2 = new ProjectManager('Sophie','UK', '29' ,'Female','C#Developer','C#','Make you homework','WEBEU2','Adrian')
 
@@ -89,8 +90,7 @@ instructor1.grade(student1,'Javascript')
 
 //Student Methodes called
 
-student1.listSubjects()
-student2.listSubjects()
+student1.listsSubjects();
 student1.PRAssignment('JavaScript')
 
 //ProjectManager Methodes called
